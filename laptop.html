@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="data:image/png;base64,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" alt="" width="30" height="24">
+        </a>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">AM</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/special.html">special</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="/laptop.html">laptop</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+      <div class="card" >
+        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Details
+            </a>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                </a></button>
+              </div>
+           
+          </p>
+          <div class="collapse"  id="multiCollapseExample1">
+            <div class="card card-body">
+                Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+        <div class="card">
+          <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+            <p>
+              <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Details
+              </a>
+              <div class="d-grid gap-2">
+                  <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                  </a></button>
+                </div>
+             
+            </p>
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body">
+                  Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>    <div class="col">
+        <div class="card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNCg1R7-2_Z23bvMyrpOoo5G7VLMzO1FBKpw&usqp=CAU" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">dell Laptop:₹42,900.00</h5>
+            <p>
+              <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Details
+              </a>
+              <div class="d-grid gap-2">
+                  <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                  </a></button>
+                </div>
+             
+            </p>
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body">
+                  Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>    <div class="col">
+        <div class="card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2e1mCrUI5Vx3bdPBmUsUc5j_w_WsOhlyWUA&usqp=CAU" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">HP Laptop:₹35,900.00</h5>
+            <p>
+              <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Details
+              </a>
+              <div class="d-grid gap-2">
+                  <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                  </a></button>
+                </div>
+             
+            </p>
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body">
+                  Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>    <div class="col">
+        <div class="card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3SFB_eAjOK4l3abC00bwrXRxqVBYM1q-iTA&usqp=CAU" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">AsusLaptop:₹254,900.00</h5>
+            <p>
+              <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Details
+              </a>
+              <div class="d-grid gap-2">
+                  <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                  </a></button>
+                </div>
+             
+            </p>
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body">
+                  Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>    <div class="col">
+        <div class="card">
+          <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+            <p>
+              <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Details
+              </a>
+              <div class="d-grid gap-2">
+                  <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                  </a></button>
+                </div>
+             
+            </p>
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body">
+                  Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>    <div class="col">
+        <div class="card">
+          <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+            <p>
+              <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Details
+              </a>
+              <div class="d-grid gap-2">
+                  <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                  </a></button>
+                </div>
+             
+            </p>
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body">
+                  Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>    <div class="col">
+        <div class="card">
+          <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+            <p>
+              <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Details
+              </a>
+              <div class="d-grid gap-2">
+                  <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                  </a></button>
+                </div>
+             
+            </p>
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body">
+                  Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>    <div class="col">
+        <div class="card">
+          <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+            <p>
+              <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Details
+              </a>
+              <div class="d-grid gap-2">
+                  <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                  </a></button>
+                </div>
+             
+            </p>
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body">
+                  Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>    <div class="col">
+        <div class="card">
+          <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+            <p>
+              <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Details
+              </a>
+              <div class="d-grid gap-2">
+                  <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                  </a></button>
+                </div>
+             
+            </p>
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body">
+                  Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>    <div class="col">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Details
+            </a>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                </a></button>
+              </div>
+           
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    <div class="col">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Details
+            </a>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                </a></button>
+              </div>
+           
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    <div class="col">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Details
+            </a>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                </a></button>
+              </div>
+           
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    <div class="col">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Details
+            </a>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                </a></button>
+              </div>
+           
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    <div class="col">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Details
+            </a>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                </a></button>
+              </div>
+           
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    <div class="col">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Details
+            </a>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                </a></button>
+              </div>
+           
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    <div class="col">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Details
+            </a>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                </a></button>
+              </div>
+           
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    <div class="col">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Details
+            </a>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                </a></button>
+              </div>
+           
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    <div class="col">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Details
+            </a>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                </a></button>
+              </div>
+           
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    <div class="col">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Details
+            </a>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                </a></button>
+              </div>
+           
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    <div class="col">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Details
+            </a>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                </a></button>
+              </div>
+           
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    <div class="col">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Details
+            </a>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                </a></button>
+              </div>
+           
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    <div class="col">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Details
+            </a>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                </a></button>
+              </div>
+           
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    <div class="col">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Details
+            </a>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                </a></button>
+              </div>
+           
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    <div class="col">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Details
+            </a>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                </a></button>
+              </div>
+           
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    <div class="col">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Details
+            </a>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                </a></button>
+              </div>
+           
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    <div class="col">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Details
+            </a>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                </a></button>
+              </div>
+           
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    <div class="col">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Details
+            </a>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                </a></button>
+              </div>
+           
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    <div class="col">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Details
+            </a>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                </a></button>
+              </div>
+           
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    <div class="col">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Details
+            </a>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                </a></button>
+              </div>
+           
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    <div class="col">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Details
+            </a>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                </a></button>
+              </div>
+           
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    <div class="col">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Details
+            </a>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                </a></button>
+              </div>
+           
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    <div class="col">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Details
+            </a>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                </a></button>
+              </div>
+           
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    <div class="col">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Details
+            </a>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                </a></button>
+              </div>
+           
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    <div class="col">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Details
+            </a>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                </a></button>
+              </div>
+           
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    <div class="col">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Details
+            </a>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                </a></button>
+              </div>
+           
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    <div class="col">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Details
+            </a>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                </a></button>
+              </div>
+           
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    <div class="col">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Details
+            </a>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                </a></button>
+              </div>
+           
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    <div class="col">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Details
+            </a>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                </a></button>
+              </div>
+           
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    <div class="col">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Details
+            </a>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                </a></button>
+              </div>
+           
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    <div class="col">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Details
+            </a>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                </a></button>
+              </div>
+           
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    <div class="col">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL480_QL65_.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">2020 Apple MacBook Air Laptop:₹92,900.00</h5>
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Details
+            </a>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button"><a href="https://www.amazon.in/dp/B08N5T6CZ6?ref_=cm_sw_r_cp_ud_dp_J4JWEJPA55AJ41FC5R6E">Buy
+                </a></button>
+              </div>
+           
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Apple M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</body>
+    
+
+</html>
